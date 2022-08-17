@@ -22,18 +22,10 @@ class TemplateMateri extends StatelessWidget {
         child: ListView(
           children: [
             const SizedBox(height: 20),
-            Text(
-              'Pengelolaan dan Pengiriman Surat Melalui Email',
-              style: fw_500.copyWith(
-                fontSize: 20,
-                color: whiteColor,
-              ),
-            ),
-            const SizedBox(height: 20),
             TextMateri(materi: title),
             TextMateri(materi: materi),
             const SizedBox(height: 20),
-            Image.asset('assets/images/$image', height: 350),
+            Image.asset('assets/images/$image'),
             const SizedBox(height: 100),
           ],
         ),

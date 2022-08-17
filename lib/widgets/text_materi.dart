@@ -12,7 +12,7 @@ class TextMateri extends StatelessWidget {
         materi,
         style: fw_400.copyWith(
           fontSize: 16,
-          color: whiteColor,
+          color: primaryColor,
         ),
         textAlign: TextAlign.justify,
       ),

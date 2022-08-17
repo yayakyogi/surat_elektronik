@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:surat_elektronik/themes.dart';
+import 'package:surat_elektronik/widgets/layout_materi.dart';
 import 'package:surat_elektronik/widgets/text_materi.dart';
 
 class Materi2 extends StatelessWidget {
@@ -8,26 +9,13 @@ class Materi2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: whiteColor,
-        ),
-        backgroundColor: Colors.blue,
-        toolbarHeight: 70,
-        title: Text(
-          'Kelebihan dan Kekurangan Email',
-          style: fw_500.copyWith(
-            fontSize: 18,
-            color: whiteColor,
-          ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: ListView(
+      body: LayoutMateri(
+        backgroundImage: 'img_menu_kelebihan.jpg',
+        marginTop: 160,
+        marginBottom: 20,
+        widget: ListView(
           children: const [
-            SizedBox(height: 30),
+            SizedBox(height: 10),
             TextMateri(
               materi:
                   'Kegiatan surat-menyurat sebagai penunjang kegiatan perkantoran tidak selalu harus dalam bentuk wujud fisik. Melalui kecanggihan perkembangan teknologi informasi (TI), Kegiatan surat menyurat dapat dilakukan melalui perangkat elektronik yaitu computer denan menggunakan fasilitas jaringan internet dan layanan e-mail.',

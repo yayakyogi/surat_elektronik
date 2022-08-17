@@ -1,38 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:surat_elektronik/themes.dart';
+import 'package:surat_elektronik/utils/transition_page.dart';
 import 'package:surat_elektronik/widgets/button_submit.dart';
 
 class MateriController extends StatelessWidget {
   const MateriController({
     Key? key,
-    required this.onNext,
+    required this.page,
   }) : super(key: key);
 
-  final Function() onNext;
+  final Widget page;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      color: primaryColor,
-      height: 70,
+      color: const Color.fromARGB(255, 203, 222, 252),
+      height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            width: 150,
-            child: ButtonSubmit(
-              onPressed: () => Navigator.pop(context),
-              title: 'Back',
-              isButtonSmall: true,
+            child: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset(
+                'assets/images/img_button_back.png',
+                width: 100,
+                height: 50,
+              ),
             ),
           ),
           SizedBox(
-            width: 150,
-            child: ButtonSubmit(
-              onPressed: onNext,
-              title: 'Next',
-              isButtonSmall: true,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context, EnterPage(page: page));
+              },
+              child: Image.asset(
+                'assets/images/img_button_next.png',
+                width: 100,
+                height: 50,
+              ),
             ),
           ),
         ],

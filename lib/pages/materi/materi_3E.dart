@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:surat_elektronik/pages/materi/materi_3E.dart';
-import 'package:surat_elektronik/themes.dart';
+import 'package:surat_elektronik/pages/materi/materi_3F.dart';
 import 'package:surat_elektronik/widgets/layout_materi.dart';
 import 'package:surat_elektronik/widgets/materi_controller.dart';
 import 'package:surat_elektronik/widgets/template_materi.dart';
 
-class Materi3D extends StatelessWidget {
-  const Materi3D({Key? key}) : super(key: key);
+class Materi3E extends StatelessWidget {
+  const Materi3E({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +15,13 @@ class Materi3D extends StatelessWidget {
         marginTop: 160,
         marginBottom: 20,
         widget: TemplateMateri(
-          title: '3.	Sudah memiliki akun g-mail',
-          image: 'img_4.png',
+          title: '',
+          image: 'img_5.png',
           materi:
-              'Apabila anda sudah memiliki akun g-mail ,setelah masuk ke halaman awal gmail,anda cukup megisi kolom email or phone dengan alamat akun gmail anda.selanjutnya klik next.',
+              'Setelah Mengklik, akan muncul laman enter password,Masukan password akun gmail anda.',
         ),
       ),
-      bottomSheet: MateriController(page: Materi3E()),
+      bottomSheet: MateriController(page: Materi3F()),
     );
   }
 }
