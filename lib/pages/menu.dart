@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:surat_elektronik/pages/kuis/kuis1.dart';
 import 'package:surat_elektronik/pages/materi/materi_menu.dart';
 import 'package:surat_elektronik/themes.dart';
 import 'package:surat_elektronik/utils/transition_page.dart';
@@ -41,7 +42,12 @@ class Menu extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  EnterPage(page: const Kuis1()),
+                );
+              },
               child: Image.asset(
                 'assets/images/img_menu_kuis.png',
                 width: 300,
