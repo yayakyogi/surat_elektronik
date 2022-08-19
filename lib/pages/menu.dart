@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:surat_elektronik/pages/home.dart';
 import 'package:surat_elektronik/pages/kuis/kuis1.dart';
 import 'package:surat_elektronik/pages/materi/materi_menu.dart';
 import 'package:surat_elektronik/themes.dart';
@@ -9,61 +10,69 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: primaryColor,
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/img_menu1.jpg'),
-            fit: BoxFit.cover,
+    return WillPopScope(
+      onWillPop: () async {
+        return await Navigator.pushReplacement(
+          context,
+          ExitPage(page: const Home()),
+        );
+      },
+      child: Scaffold(
+        backgroundColor: primaryColor,
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/img_menu1.jpg'),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(height: 60),
-            GestureDetector(
-              onTap: () {},
-              child: Image.asset(
-                'assets/images/img_menu_petunjuk.png',
-                width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 60),
+              GestureDetector(
+                onTap: () {},
+                child: Image.asset(
+                  'assets/images/img_menu_petunjuk.png',
+                  width: 300,
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, EnterPage(page: const MateriMenu()));
-              },
-              child: Image.asset(
-                'assets/images/img_menu_materi.png',
-                width: 300,
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, EnterPage(page: const MateriMenu()));
+                },
+                child: Image.asset(
+                  'assets/images/img_menu_materi.png',
+                  width: 300,
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  EnterPage(page: const Kuis1()),
-                );
-              },
-              child: Image.asset(
-                'assets/images/img_menu_kuis.png',
-                width: 300,
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    EnterPage(page: const Kuis1()),
+                  );
+                },
+                child: Image.asset(
+                  'assets/images/img_menu_kuis.png',
+                  width: 300,
+                ),
               ),
-            ),
-            const SizedBox(height: 50),
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Image.asset(
-                'assets/images/img_button_exit.png',
-                width: 200,
+              const SizedBox(height: 50),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  'assets/images/img_button_exit.png',
+                  width: 200,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

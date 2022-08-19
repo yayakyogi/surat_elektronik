@@ -20,7 +20,10 @@ class Materi3H extends StatelessWidget {
               'Setelah mengeklik menu compose,anda akan melihatkotak new message,berikut adalah Tampilan untuk new message tersebut',
         ),
       ),
-      bottomSheet: MateriController(page: Materi3H()),
+      bottomSheet: MateriController(
+        page: Materi3H(),
+        isLastPagee: true,
+      ),
     );
   }
 }
